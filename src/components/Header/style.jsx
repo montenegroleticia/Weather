@@ -5,7 +5,7 @@ export const ContainerHeader = styled.div`
   h1 {
     color: #fff;
     text-align: center;
-    font-family: "Roboto";
+    font-family: "Jua";
     font-size: 40px;
   }
 `;
