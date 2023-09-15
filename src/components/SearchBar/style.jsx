@@ -14,6 +14,9 @@ export const ContainerSearch = styled.div`
     outline: none;
     font-family: "Jua";
     font-size: 16px;
+    &::placeholder {
+      color: darkcyan;
+    }
   }
   button {
     width: 80px;
