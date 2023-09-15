@@ -1,7 +1,8 @@
+import { ContainerHome } from "./style";
 import Header from "../../components/Header/index";
 import SearchBar from "../../components/SearchBar/index";
 import ChangeBar from "../../components/ChangeBar/index";
-import { ContainerHome } from "./style";
+import Graphic from "../../components/Graphic";
 
 function HomePage() {
   return (
@@ -9,6 +10,7 @@ function HomePage() {
       <Header />
       <SearchBar />
       <ChangeBar />
+      <Graphic />
     </ContainerHome>
   );
 }
