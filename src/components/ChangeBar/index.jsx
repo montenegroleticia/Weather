@@ -2,11 +2,7 @@ import { ContainerChangeBar, ContainerLeft, ContainerRight } from "./style";
 
 function ChangeBar({ weather }) {
   if (!weather || weather.length === 0) {
-    return (
-      <ContainerChangeBar>
-        <p>Busque por uma cidade</p>
-      </ContainerChangeBar>
-    );
+    return;
   }
 
   function kelvinToCelsius(kelvin) {

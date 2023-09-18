@@ -5,10 +5,11 @@ import SearchBar from "../../components/SearchBar/index";
 import ChangeBar from "../../components/ChangeBar/index";
 import Graphic from "../../components/Graphic";
 import getGeocoding from "../../services/GeocodingApi";
-import getWeather from "../../services/WeatherApi";
+import weatherApi from "../../services/WeatherApi";
 
 function HomePage() {
   const [weather, setWeather] = useState([]);
+  const [weatherList, setWeatherList] = useState([]);
 
   function getCity(searchValue) {
     getGeocoding(searchValue)
@@ -17,13 +18,22 @@ function HomePage() {
         const lat = cityFirst[0].lat;
         const lon = cityFirst[0].lon;
         getweather(lat, lon);
+        getWeatherList(lat, lon);
       })
       .catch((err) => err.response);
   }
 
   function getweather(lat, lon) {
-    getWeather(lat, lon)
+    weatherApi
+      .getWeather(lat, lon)
       .then((res) => setWeather(res.data))
+      .catch((err) => alert(JSON.stringify(err.response.data)));
+  }
+
+  function getWeatherList(lat, lon) {
+    weatherApi
+      .getWeatherList(lat, lon)
+      .then((res) => setWeatherList(res.data))
       .catch((err) => alert(JSON.stringify(err.response.data)));
   }
 
@@ -32,7 +42,7 @@ function HomePage() {
       <Header />
       <SearchBar getCity={getCity} />
       <ChangeBar weather={weather} />
-      <Graphic />
+      <Graphic weather={weather} weatherList={weatherList} />
     </ContainerHome>
   );
 }
