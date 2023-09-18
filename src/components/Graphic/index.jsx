@@ -18,9 +18,7 @@ function Graphic({ weatherList }) {
     return (kelvin - 273.15).toFixed(0);
   }
 
-  const slicedWeatherList = weatherList.list.slice(0, 30);
-
-  const data = slicedWeatherList.map((item) => ({
+  const data = weatherList.list.map((item) => ({
     name: item.dt_txt.split(" ")[0],
     uv: kelvinToCelsius(item.main.temp),
   }));
