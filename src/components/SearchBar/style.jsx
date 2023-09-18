@@ -4,7 +4,6 @@ export const ContainerSearch = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   input {
     width: 250px;
     height: 24px;
@@ -14,6 +13,7 @@ export const ContainerSearch = styled.div`
     outline: none;
     font-family: "Jua";
     font-size: 16px;
+    margin-right: 8px;
     &::placeholder {
       color: darkcyan;
     }
