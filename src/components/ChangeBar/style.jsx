@@ -5,7 +5,7 @@ export const ContainerChangeBar = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: 460px;
+  width: 390px;
   height: 80px;
   border-radius: 16px;
   background-color: #fff;
