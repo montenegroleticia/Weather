@@ -22,7 +22,6 @@ function HomePage() {
   }
 
   function getweather(lat, lon) {
-    console.log(lat);
     getWeather(lat, lon)
       .then((res) => setWeather(res.data))
       .catch((err) => alert(JSON.stringify(err.response.data)));
