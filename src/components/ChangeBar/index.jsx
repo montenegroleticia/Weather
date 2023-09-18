@@ -26,8 +26,20 @@ function ChangeBar({ weather }) {
   const translatedWeather =
     translationMap[weather.weather[0].main] || weather.weather[0].main;
 
+  const colorMap = {
+    "Céu aberto": "#ffff99",
+    Nublado: "#e6e6e6",
+    Chovendo: "#add8e6",
+    Nevando: "#ffffff",
+    Tempestade: "#d8bfd8",
+    Chuviscando: "#add8e6",
+    Neblina: "#e6e6e6",
+  };
+
+  const backgroundColor = colorMap[translatedWeather] || "white";
+
   return (
-    <ContainerChangeBar>
+    <ContainerChangeBar style={{ backgroundColor }}>
       <ContainerLeft>
         <h3>Agora: {weather.name}</h3>
         <div>
