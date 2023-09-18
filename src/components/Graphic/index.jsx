@@ -9,7 +9,6 @@ import {
 } from "recharts";
 
 function Graphic({ weatherList }) {
-  console.log(weatherList);
   if (!weatherList || weatherList.length === 0) {
     return;
   }
